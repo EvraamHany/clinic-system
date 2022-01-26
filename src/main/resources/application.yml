@@ -1,11 +1,7 @@
 
 server:
   port: 8080
-  tomcat:
-    accept-count: ${CONNECTION_ACCEPT_COUNT:100}
-    max-connections: ${MAX_CONNECTION:8192}
-  ssl:
-    enabled: ${TLS_ENABLED:false}
+
 
 
 spring:
@@ -13,9 +9,9 @@ spring:
     name: clinic-system
 
   datasource:
-    url: 'jdbc:postgresql://${DB_SERVICE_NAME:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:clinic_system}?ssl=${POSTGRES_SSL:false}&sslmode=${POSTGRES_SSL_MODE$:allow}'
-    username: ${DB_USER_NAME:postgres}
-    password: ${DB_USER_PASSWORD:root}
+    url: 'jdbc:postgresql//localhost:5432/clinic_system?ssl=false&sslmode=allow'
+    username: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
 
   jpa:
